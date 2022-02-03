@@ -198,6 +198,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/platform-browser@~13.2.1":
+  version "13.2.1"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-13.2.1.tgz#aef6d827e3375cdecc651b07e0d795a1390e15cb"
+  integrity sha512-9idmGsWqLMhslMnG6+GojNO7L2IRM0DOeUlTo/x28zTedg6f7j2wRJ+ZxfTVRhf75Y3NXOjJ0bfKnLkHOzA+Aw==
+  dependencies:
+    tslib "^2.3.0"
+
 "@assemblyscript/loader@^0.10.1":
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.10.1.tgz#70e45678f06c72fa2e350e8553ec4a4d72b92e06"
