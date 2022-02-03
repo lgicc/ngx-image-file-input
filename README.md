@@ -1,4 +1,4 @@
-[![CodeQL](https://github.com/lgicc/ngx-image-file-upload/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/lgicc/ngx-image-file-upload/actions/workflows/codeql-analysis.yml)
+[![CodeQL](https://github.com/lgicc/ngx-image-file-input/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/lgicc/ngx-image-file-input/actions/workflows/codeql-analysis.yml)
 
 # ngx-image-file-upload
 
