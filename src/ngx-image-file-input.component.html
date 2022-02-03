@@ -1,5 +1,5 @@
 <input type="file" hidden #fileInput>
-<div (click)="fileInput.click()" [class.not-touched]="!imageUrl">
+<div (click)="fileInput.click()" [class.not-touched]="!imageUrl" class="ngxifi">
   <img [src]="imageUrl" [alt]="alt" *ngIf="imageUrl">
   <div *ngIf="!imageUrl">
     <div #noImageContent>
