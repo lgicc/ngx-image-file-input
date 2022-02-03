@@ -32,7 +32,7 @@ import { ImageFileUploadModule } from "@lgicc/image-file-upload";
 @NgModule({
     imports: [
         ...
-          ImageFileUploadModule
+          NgxImageFileInputModule
     ],
     declarations: [...],
     providers: [...]
