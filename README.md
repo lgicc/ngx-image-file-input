@@ -1,3 +1,6 @@
+[![CodeQL](https://github.com/lgicc/ngx-image-file-upload/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/lgicc/ngx-image-file-upload/actions/workflows/codeql-analysis.yml)
+[![Node.js Package](https://github.com/lgicc/ngx-image-file-upload/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/lgicc/ngx-image-file-upload/actions/workflows/npm-publish.yml)
+
 # ngx-image-file-upload
 
 ## Table of contents
