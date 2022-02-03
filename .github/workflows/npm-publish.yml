@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    needs: analyze
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,9 +27,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
+          registry-url: https://npm.pkg.github.com/
           scope: '@lgicc'
-      - run: npm install
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
