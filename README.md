@@ -18,16 +18,16 @@ The value of the field will be the Image DataURL.
 Install the package by command:
 
 ```sh
-    npm install @lgicc/ngx-image-file-upload --save
+    npm install @lgicc/ngx-image-file-input --save
 ```
 ```sh
-    yarn add @lgicc/ngx-image-file-upload
+    yarn add @lgicc/ngx-image-file-input
 ```
 
 Import the module
 
 ```ts
-import { ImageFileUploadModule } from "@lgicc/image-file-upload";
+import { NgxImageFileInputModule } from "@lgicc/ngx-image-file-input";
 
 @NgModule({
     imports: [
