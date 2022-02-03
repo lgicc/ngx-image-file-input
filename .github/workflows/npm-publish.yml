@@ -28,6 +28,6 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
           scope: '@lgicc'
-      - run: npm publish --access public
+      - run: npm publish dist --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
