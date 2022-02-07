@@ -48,7 +48,7 @@ export class NgxImageFileInputComponent implements OnInit, AfterViewInit, OnDest
   ngOnInit(): void {
     this.subscriptions.push(
       this.fileControl.valueChanges.subscribe(async (data) => {
-        this.imageUrl = data.dataUrl;
+        this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(data.dataUrl);
       })
     )
   }
@@ -63,7 +63,7 @@ export class NgxImageFileInputComponent implements OnInit, AfterViewInit, OnDest
       const file: File = this.fileElementRef.nativeElement.files[0];
       const url = await firstValueFrom(this.loadFileUrl(file));
       const fileData = {
-        dataUrl: this.sanitizer.bypassSecurityTrustUrl(url),
+        dataUrl: url,
         filename: file.name,
         size: file.size,
         type: file.type
