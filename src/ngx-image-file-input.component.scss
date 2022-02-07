@@ -9,5 +9,10 @@
   &.not-touched {
     border: 1px solid grey;
   }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 

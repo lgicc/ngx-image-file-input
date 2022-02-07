@@ -1,6 +1,16 @@
-import {AfterViewInit, Component, ElementRef, forwardRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  forwardRef,
+  Input,
+  OnDestroy,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {firstValueFrom, Observable, Subscription, throwError} from 'rxjs';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'ngx-image-file-input',
@@ -15,7 +25,7 @@ import {firstValueFrom, Observable, Subscription, throwError} from 'rxjs';
   ]
 })
 export class NgxImageFileInputComponent implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
-  imageUrl?: string;
+  imageUrl?: SafeUrl;
 
   fileControl = new FormControl();
 
@@ -30,7 +40,9 @@ export class NgxImageFileInputComponent implements OnInit, AfterViewInit, OnDest
   private propagateChange = (_: any) => {};
   private propagateTouch = (_: any) => {};
 
-  constructor() {
+  constructor(
+      private sanitizer: DomSanitizer
+  ) {
   }
 
   ngOnInit(): void {
@@ -49,10 +61,9 @@ export class NgxImageFileInputComponent implements OnInit, AfterViewInit, OnDest
       }
 
       const file: File = this.fileElementRef.nativeElement.files[0];
-      console.log(file);
       const url = await firstValueFrom(this.loadFileUrl(file));
       const fileData = {
-        dataUrl: url,
+        dataUrl: this.sanitizer.bypassSecurityTrustUrl(url),
         filename: file.name,
         size: file.size,
         type: file.type
@@ -78,8 +89,13 @@ export class NgxImageFileInputComponent implements OnInit, AfterViewInit, OnDest
     this.propagateTouch = fn;
   }
 
-  writeValue(img: string): void {
-    this.imageUrl = img;
+  writeValue(img: {
+    dataUrl: string,
+    filename: string,
+    size: number,
+    type: string
+  }): void {
+    this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(img.dataUrl);
   }
 
   private loadFileUrl(file: any): Observable<string> {
