@@ -57,6 +57,8 @@ export class NgxImageFileInputComponent implements OnInit, AfterViewInit, OnDest
     this.fileElementRef.nativeElement.onchange = async () => {
       if (this.fileElementRef.nativeElement.files === null) {
         this.fileControl.setValue(null);
+        this.propagateChange(null);
+        this.propagateTouch(null);
         return;
       }
 

@@ -1,13 +1,14 @@
 {
   "name": "@lgicc/ngx-image-file-input",
-  "version": "0.0.5",
+  "version": "0.0.8",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "build": "ng build & gulp"
+    "build": "ng build & gulp && npm publish ./dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lgicc/ngx-image-file-upload.git"
+    "url": "git+https://github.com/lgicc/ngx-image-file-input.git"
   },
   "dependencies": {
     "tslib": "^2.3.0"
